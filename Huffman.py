@@ -43,7 +43,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# def main():
-#     arr = [Item(20, 15), Item(40, 40), Item(50, 70)]
-#     print(FractionalKnapsack(arr, 50))
-# ans=55
+
