@@ -1,6 +1,6 @@
 import heapq
 
-class Node:
+class Node: //Minheapnode
     def __init__(self, data, freq):
         self.data = data
         self.freq = freq
