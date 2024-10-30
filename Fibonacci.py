@@ -8,6 +8,8 @@ def fibonacci_recursive(n):
     if n <= 0:
         return 0
     elif n == 1:
+        return 0
+    elif n==2:
         return 1
     else:
         return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
@@ -22,12 +24,15 @@ def fibonacci_iterative(n):
     if n <= 0:
         return 0
     elif n == 1:
+        return 0
+    elif n == 2:
         return 1
 
     fib = [0] * (n + 1)
-    fib[1] = 1
+    fib[1] = 0
+    fib[2] = 1
 
-    for i in range(2, n + 1):
+    for i in range(3, n + 1):
         iterative_step_count += 1  # Increment the step count for each iteration
         fib[i] = fib[i - 1] + fib[i - 2]
 
@@ -54,14 +59,14 @@ def generate_fibonacci_sequence(n):
     if n <= 0:
         return []
     
-    fibonacci_sequence = []
-    a, b = 0, 1
+    fibonacci_sequence = [0, 1]  # Start with the first two Fibonacci numbers
     
-    while a <= n:
-        fibonacci_sequence.append(a)
-        a, b = b, a + b
+    for i in range(2, n):
+        # Add the next number in the sequence by summing the last two numbers
+        next_number = fibonacci_sequence[i - 1] + fibonacci_sequence[i - 2]
+        fibonacci_sequence.append(next_number)
     
-    return fibonacci_sequence
+    return fibonacci_sequence[:n]
 
 # Generate and print the list of Fibonacci numbers up to 'n'
 fib_sequence = generate_fibonacci_sequence(n)
