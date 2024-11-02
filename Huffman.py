@@ -35,8 +35,8 @@ class Huffman:
         self._print_codes(min_heap[0], "")
 
 def main():
-    data = ['A', 'B', 'C', 'D']
-    freq = [23, 12, 34, 10]
+    data = ['A', 'B', 'C', 'D'] #data= input("Data with spaces : ").split()
+    freq = [23, 12, 34, 10] #list(map(int, input("Frequency with spaces : ").split()))
     huffman = Huffman()
     huffman.build(data, freq)
 
